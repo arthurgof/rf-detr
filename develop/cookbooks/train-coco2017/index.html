@@ -12,7 +12,7 @@
         <meta name="author" content="Roboflow">
       
       
-        <link rel="canonical" href="https://rfdetr.roboflow.com/develop/cookbooks/export-coreml/">
+        <link rel="canonical" href="https://rfdetr.roboflow.com/develop/cookbooks/train-coco2017/">
       
       
       
@@ -27,7 +27,7 @@
   
     
       
-        <title>RF-DETR → Native CoreML Export & Inference - RF-DETR</title>
+        <title>Train RF-DETR Nano on COCO2017 (single GPU) - RF-DETR</title>
       
     
   
@@ -64,6 +64,10 @@
     
   
   
+  
+  <meta name="robots" content="noindex, follow">
+  
+  
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-5M220DKLMB"></script>
   <script>
@@ -78,10 +82,10 @@
   
   
   
-  <meta property="og:title" content="RF-DETR → Native CoreML Export &amp; Inference - RF-DETR">
+  <meta property="og:title" content="Train RF-DETR Nano on COCO2017 (single GPU) - RF-DETR">
   <meta property="og:description" content="Real-time transformer for object detection and instance segmentation. DINOv2 backbone, SOTA on COCO (60.1 AP50:95). Apache 2.0. Works with Python ≥3.10.">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://rfdetr.roboflow.com/develop/cookbooks/export-coreml/">
+  <meta property="og:url" content="https://rfdetr.roboflow.com/develop/cookbooks/train-coco2017/">
   <meta property="og:image" content="https://storage.googleapis.com/com-roboflow-marketing/rf-detr/rf_detr_1-4_latency_accuracy_object_detection.png">
   <meta property="og:image:width" content="840">
   <meta property="og:image:height" content="630">
@@ -89,7 +93,7 @@
   
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@roboflow">
-  <meta name="twitter:title" content="RF-DETR → Native CoreML Export &amp; Inference - RF-DETR">
+  <meta name="twitter:title" content="Train RF-DETR Nano on COCO2017 (single GPU) - RF-DETR">
   <meta name="twitter:description" content="Real-time transformer for object detection and instance segmentation. DINOv2 backbone, SOTA on COCO (60.1 AP50:95). Apache 2.0. Works with Python ≥3.10.">
   <meta name="twitter:image" content="https://storage.googleapis.com/com-roboflow-marketing/rf-detr/rf_detr_1-4_latency_accuracy_object_detection.png">
 
@@ -97,26 +101,26 @@
   
   
   
-  <meta property="article:modified_time" content="2026-07-28T18:51:45">
+  <meta property="article:modified_time" content="2026-09-22T10:30:49">
   
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "TechArticle",
-    "headline": "RF-DETR \u2192 Native CoreML Export \u0026amp; Inference",
+    "headline": "Train RF-DETR Nano on COCO2017 (single GPU)",
     "description": "Real-time transformer for object detection and instance segmentation. DINOv2 backbone, SOTA on COCO (60.1 AP50:95). Apache 2.0. Works with Python \u22653.10.",
-    "url": "https://rfdetr.roboflow.com/develop/cookbooks/export-coreml/",
+    "url": "https://rfdetr.roboflow.com/develop/cookbooks/train-coco2017/",
     "isPartOf": {"@id": "https://rfdetr.roboflow.com/develop#website"},
     "about": {"@id": "https://rfdetr.roboflow.com/develop#software"},
     "proficiencyLevel": "Beginner to advanced",
     "inLanguage": "en",
     "keywords": "RF-DETR, rfdetr, object detection, instance segmentation, computer vision, Roboflow",
     "datePublished": "2025-03-01",
-    "dateModified": "2026-07-28T18:51:45",
+    "dateModified": "2026-09-22T10:30:49",
     "image": "https://storage.googleapis.com/com-roboflow-marketing/rf-detr/rf_detr_1-4_latency_accuracy_object_detection.png",
     "author": {"@type": "Organization", "name": "Roboflow", "url": "https://roboflow.com"},
     "publisher": {"@type": "Organization", "name": "Roboflow", "url": "https://roboflow.com"},
-    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://rfdetr.roboflow.com/develop/cookbooks/export-coreml/"},
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://rfdetr.roboflow.com/develop/cookbooks/train-coco2017/"},
     "speakable": {
       "@type": "SpeakableSpecification",
       "cssSelector": [".md-content h1", ".md-typeset > p:first-child"]
@@ -138,8 +142,8 @@
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "RF-DETR \u2192 Native CoreML Export \u0026amp; Inference",
-        "item": "https://rfdetr.roboflow.com/develop/cookbooks/export-coreml/"
+        "name": "Train RF-DETR Nano on COCO2017 (single GPU)",
+        "item": "https://rfdetr.roboflow.com/develop/cookbooks/train-coco2017/"
       }
       
     ]
@@ -160,7 +164,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#rf-detr-native-coreml-export-inference" class="md-skip">
+        <a href="#train-rf-detr-nano-on-coco2017-single-gpu" class="md-skip">
           Skip to content
         </a>
       
@@ -170,6 +174,14 @@
     </div>
     
       <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+          <aside class="md-banner md-banner--warning">
+            <div class="md-banner__inner md-grid md-typeset">
+              You are reading the unreleased development version of the documentation, built from the <code>develop</code> branch.<br>
+APIs described here may change or may never ship in a release, so use the <a href="https://rfdetr.roboflow.com/latest/"><strong>latest stable release</strong></a> instead.
+            </div>
+            <script>var el=document.querySelector("[data-md-component=outdated]"),base=new URL("../.."),outdated=__md_get("__outdated",sessionStorage,base);!0===outdated&&el&&(el.hidden=!1)</script>
+          </aside>
         
       </div>
     
@@ -228,7 +240,7 @@
 
             </a>
             
-              RF-DETR → Native CoreML Export &amp; Inference
+              Train RF-DETR Nano on COCO2017 (single GPU)
             
           </span>
         </div>
@@ -407,15 +419,8 @@
   
     
     
-      
-  
-  
-  
-  
-    
-    
       <li class="md-tabs__item">
-        <a href="../../getting-started/install/" class="md-tabs__link">
+        <a href="../../learn/how-it-works/" class="md-tabs__link">
           
   
   
@@ -426,6 +431,23 @@
     
   
 
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../exports/" class="md-tabs__link">
+          
+  
+  
+  Export
+
+        </a>
+      </li>
     
   
 
@@ -661,6 +683,34 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../learn/how-it-works/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How It Works
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
     
@@ -675,10 +725,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_1" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
         
           
-          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
             
   
   
@@ -696,8 +746,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -791,10 +841,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
         
           
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
             
   
   
@@ -812,8 +862,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -963,10 +1013,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
         
           
-          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
             
   
   
@@ -984,8 +1034,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1206,7 +1256,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../learn/export/" class="md-nav__link">
+      <a href="../../exports/" class="md-nav__link">
         
   
   
@@ -1320,7 +1370,7 @@
   <span class="md-ellipsis">
     
   
-    API Reference
+    Export
   
 
     
@@ -1333,6 +1383,521 @@
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Export
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Export Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exports/basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exports/advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Export Formats
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Export Formats
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exports/onnx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ONNX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exports/tensorrt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TensorRT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exports/tflite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TFLite
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exports/litert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LiteRT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exports/openvino/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenVINO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exports/executorch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ExecuTorch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exports/coreml/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CoreML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exports/coreai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Contributing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exports/blueprint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exporter Blueprint
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1390,10 +1955,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
         
           
-          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
             
   
   
@@ -1411,8 +1976,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1618,10 +2183,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
         
           
-          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
             
   
   
@@ -1639,8 +2204,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1846,10 +2411,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4" >
         
           
-          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
             
   
   
@@ -1867,8 +2432,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1934,10 +2499,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_5" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_5" >
         
           
-          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
             
   
   
@@ -1955,8 +2520,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2078,10 +2643,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_6" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_6" >
         
           
-          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
             
   
   
@@ -2099,8 +2664,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2288,10 +2853,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-install" class="md-nav__link">
+  <a href="#why-this-notebook-is-simple-on-purpose" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Install
+        Why this notebook is simple on purpose
       
     </span>
   </a>
@@ -2299,10 +2864,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-setup" class="md-nav__link">
+  <a href="#scope-and-honest-expectations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Setup
+        Scope and honest expectations
       
     </span>
   </a>
@@ -2310,10 +2875,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-export-to-a" class="md-nav__link">
+  <a href="#1-download-coco2017" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Export to a
+        1 - Download COCO2017
       
     </span>
   </a>
@@ -2321,10 +2886,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-sample-image" class="md-nav__link">
+  <a href="#2-set-up-the-environment" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Sample image
+        2 - Set up the environment
       
     </span>
   </a>
@@ -2332,10 +2897,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-run-the-with" class="md-nav__link">
+  <a href="#3-move-the-dataset-to-devshm" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Run the with
+        3 - Move the dataset to /dev/shm
       
     </span>
   </a>
@@ -2343,21 +2908,110 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-visualize-with-supervision" class="md-nav__link">
+  <a href="#4-load-the-model" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Visualize with supervision
+        4 - Load the model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 - Load the model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gpu-configuration-recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GPU configuration recommendations
       
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
+  <a href="#5-train" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Next steps
+        5 - Train
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5 - Train">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#training-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Training settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compilation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compilation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuda-graphs-on-top-of-compilation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CUDA graphs on top of compilation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-left" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is left
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-transformer-engine-fp8-graphs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional: Transformer Engine FP8 graphs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-plot-csvlogger-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 - Plot CSVLogger metrics
       
     </span>
   </a>
@@ -3106,41 +3760,123 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </style>
 <!-- End of mermaid configuration --><div class="jupyter-wrapper">
 <div class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e3ce9e88">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d00bcb28">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="rf-detr-native-coreml-export-inference">RF-DETR → Native CoreML Export &amp; Inference<a class="anchor-link" href="#rf-detr-native-coreml-export-inference">¶</a></h1><p>Export an RF-DETR detector directly to a native <strong>CoreML <code>.mlpackage</code></strong> you can drag straight into Xcode —
-no ONNX intermediary and no ExecuTorch runtime involved.</p>
+<h1 id="train-rf-detr-nano-on-coco2017-single-gpu">Train RF-DETR Nano on COCO2017 (single GPU)<a class="anchor-link" href="#train-rf-detr-nano-on-coco2017-single-gpu">¶</a></h1><p><a href="https://colab.research.google.com/github/roboflow/rf-detr/blob/develop/docs/cookbooks/train-coco2017.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
+<p>Downloads the full public <strong>COCO2017</strong> dataset and trains <strong>RF-DETR Nano</strong> from scratch for 40 epochs, end to
+end — <code>pretrain_weights=None</code>, so no released detector checkpoint is loaded (section 4 covers what that costs
+in accuracy).</p>
+<p>This notebook uses <code>torch.compile</code> with automatic mixed precision (bf16 when supported, otherwise fp16) on
+any CUDA GPU by default. Measured on an RTX PRO 6000 (96 GB) an epoch takes about 7 minutes, so the 40-epoch
+run fits in about 5 hours; on an L4 (24 GB) an epoch takes about 36 minutes and the run needs several
+sessions with <code>resume</code>. A100, T4 and other CUDA GPUs run the same recipe with <code>batch_size</code> adjusted; CPU and
+Apple MPS do not benefit from compilation and should use the fine-tuning cookbooks instead.</p>
+<p>An opt-in Transformer Engine FP8 CUDA-graph route is also available (<code>USE_TE_GRAPHS = True</code> in section 4):
+it nearly doubled throughput in the batch-4 synthetic experiment below, but its full-COCO batch-128
+throughput and accuracy still need validation, so it stays off by default. Enabling every optimization
+together is not supported: FP8 graphs use Transformer Engine capture, not the compiler's graph runtime, so
+<code>USE_TE_GRAPHS=True</code> disables <code>compile</code>.</p>
+<p>Skip the RAM-disk move on a low-RAM host — it needs ~19 GB free in <code>/dev/shm</code>.</p>
+<p>In addition to library throughput improvements, this notebook enables compilation, with host-adaptive knobs
+(<code>num_workers</code>, <code>seed</code>), a batch size measured on two GPUs, and a learning-rate schedule sized for a 40-epoch
+run, each explained where it is set.</p>
+<p>Kept deliberately minimal: download, train, plot the metrics <code>CSVLogger</code> wrote during training. For dataset
+preview, checkpoint saving, and inference visualization, see <code>fine-tune_detection.ipynb</code>.</p>
+<h2 id="why-this-notebook-is-simple-on-purpose">Why this notebook is simple on purpose<a class="anchor-link" href="#why-this-notebook-is-simple-on-purpose">¶</a></h2><p>Recent releases moved several training-throughput fixes directly into the default configuration, so a stock run
+picks them up automatically:</p>
+<ul>
+<li><strong>Validation forwards one model per epoch, not two.</strong> The base-model forward pass used to run alongside the EMA
+forward every validation batch; it is now skipped when <code>use_ema=True</code> (the default).</li>
+<li><strong><code>grad_accum_steps</code> now defaults to <code>1</code></strong> instead of <code>4</code>. Gradient accumulation is an explicit opt-in — raise
+<code>batch_size</code> for your GPU first, and reach for accumulation only when memory forces a smaller physical batch.
+Measured on one L4: <code>batch_size=16, grad_accum_steps=1</code> ran 27% faster per epoch than <code>batch_size=4, grad_accum_steps=4</code> at the same nominal effective batch, with equal mAP.</li>
+<li><strong><code>eval_batch_size</code></strong> decouples the validation/test dataloaders from the training micro-batch size, so a small
+training batch no longer forces small (slower) evaluation batches.</li>
+<li><strong>COCO mAP computation reads each image's detection scores once instead of once per detection.</strong></li>
+<li><strong>The transformer skips materializing tensors it would otherwise reuse unchanged</strong> on the single-feature-level
+path that Nano (and every current detection size) uses by default.</li>
+<li><strong>Pre-training sanity-check validation is skipped by default.</strong></li>
+<li><strong>Measured end to end:</strong> the same recipe on rfdetr 1.9.0 takes 65 min/epoch on an RTX PRO 6000 and 97 min on
+an L4. The 1.9.0 pipeline was not GPU-bound (32 vs 22 img/s on those two cards); develop runs at 289 vs
+56 img/s.</li>
+</ul>
+<p>None of this needs a flag — it is what <code>RFDETRNano().train()</code> already does. TensorBoard logging is turned off so
+the notebook does not require the <code>loggers</code> extra; <code>CSVLogger</code> is always on and is what section 5 plots.</p>
+<h2 id="scope-and-honest-expectations">Scope and honest expectations<a class="anchor-link" href="#scope-and-honest-expectations">¶</a></h2><p>COCO2017 has 118,287 training images and 5,000 validation images — two to three orders of magnitude larger than
+the small Roboflow Universe datasets in the other fine-tuning cookbooks. Measured per-epoch time (training plus
+validation), for RF-DETR Nano at a fixed 384 px with <code>seed=0</code>, torch 2.11.0+cu128 and Transformer Engine
+2.18/2.19, on 11-12 Sep 2026 — RTX PRO 6000 Blackwell 96 GB is the mean of epochs 1-2, L4 24 GB is epoch 1:</p>
+<table>
+<thead>
+<tr>
+<th>GPU</th>
+<th>rfdetr 1.9.0 (bf16, batch at ceiling)</th>
+<th>develop bf16 + compile</th>
+<th>develop FP8 + compile</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RTX PRO 6000</td>
+<td>65 min @ 128 (160 OOM)</td>
+<td>7.2 min @ 128 (40 % mem), 7.3 min @ 288</td>
+<td>7.0 min @ 128, 7.1 min @ 320</td>
+</tr>
+<tr>
+<td>L4</td>
+<td>97 min @ 32 (40 is slower)</td>
+<td>35 min @ 32 (46 % mem), 36 min @ 64</td>
+<td>40 min @ 32, 37 min @ 72</td>
+</tr>
+</tbody>
+</table>
+<p>Epoch 0 is slower (compile warm-up, annotation index, page cache): about 8 % on the RTX PRO 6000 and up to 40 %
+on an L4. Time epoch 1 onward.</p>
 <blockquote>
-<p><strong>Not the same as the ExecuTorch CoreML backend.</strong> <code>format="coreml"</code> (this notebook) exports via
-<code>torch.export</code> + <code>coremltools</code> straight to a native <code>.mlpackage</code>. <code>format="executorch", backend="coreml"</code>
-is a different path — it produces a <code>.pte</code> file for the ExecuTorch runtime instead. See the
-<a href="../export-executorch/">ExecuTorch cookbook</a> for that path.</p>
+<p><strong>Session limits vary; do not assume all 40 epochs will fit in one session.</strong> Training still checkpoints every
+<code>checkpoint_interval</code> epochs (10 by default) to <code>last.ckpt</code> as a safety net: if a session merely disconnects
+and the same runtime is still alive, reopen the notebook, set <code>train_config.resume</code> to that file's path, and
+re-run the training cell to continue. On a free-tier T4/L4 the session is likely to end before 40 epochs do —
+plan on resuming. <strong>But <code>OUTPUT_DIR</code> below is local runtime disk</strong>: once Colab recycles the runtime (idle
+timeout, 12/24h cap, or a paid-tier disconnect), <code>last.ckpt</code> is gone with it, and there is nothing left to
+resume from. For a run that genuinely needs several sessions, point <code>OUTPUT_DIR</code> at mounted Google Drive
+(<code>from google.colab import drive; drive.mount("/content/drive")</code>, then
+<code>OUTPUT_DIR = "/content/drive/MyDrive/rfdetr_coco2017"</code>) instead of local disk, or copy <code>last.ckpt</code> off the
+runtime before it ends and copy it back before resuming.</p>
 </blockquote>
-<blockquote>
-<p><strong>macOS only.</strong> Running (not just building) a CoreML model requires the Core ML runtime, which only
-exists on macOS / iOS. This notebook must run on a <strong>local macOS machine</strong> — it will not work on Colab
-or any Linux runner.</p>
-</blockquote>
+<p>COCO2017 also needs about 19 GB of disk once downloaded (the archives are deleted right after extraction to avoid
+a ~38 GB peak). Confirm your Colab runtime has that much free space before starting the download.</p>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ac905f11">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=506ec0db">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1-install">1. Install<a class="anchor-link" href="#1-install">¶</a></h2><p>The <code>[coreml]</code> extra provides <code>coremltools</code>, the exporter's only dependency beyond <code>torch</code>.</p>
+<h2 id="1-download-coco2017">1 - Download COCO2017<a class="anchor-link" href="#1-download-coco2017">¶</a></h2><p>The download comes first because it is by far the longest step and needs nothing installed — only <code>wget</code> and
+<code>unzip</code>, both already on a Colab runtime. Anything the environment setup below does to the session (including a
+runtime restart, if pip asks for one) leaves the extracted dataset on disk untouched.</p>
+<p>Plain <code>wget</code>/<code>unzip</code> into the standard COCO layout RF-DETR's <code>dataset_file="coco"</code> loader expects:
+<code>coco2017/train2017/</code>, <code>coco2017/val2017/</code>, <code>coco2017/annotations/instances_{train,val}2017.json</code>.</p>
+<p>Each archive is downloaded, extracted, and deleted before the next one starts, so the disk never holds more than
+one archive alongside the extracted data. The <code>&amp;&amp;</code> chaining is deliberate: a notebook shell cell does <strong>not</strong> stop
+on a failed command, so a bare sequence would run <code>unzip</code> on a truncated download and <code>rm</code> on a failed extraction,
+then scroll past — the failure would only surface much later, as a missing-image error part-way into training.
+<code>wget -c</code> resumes an interrupted download instead of restarting it, and <code>unzip -o</code> overwrites files already
+extracted, so re-running this cell after a disconnected Colab session replaces any partially extracted file. The
+closing <code>df -h</code> shows the disk headroom left; the extracted dataset needs about 19 GB.</p>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=aa06fb0d">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=7a16198a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3158,27 +3894,37 @@ or any Linux runner.</p>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">q</span> <span class="s2">"rfdetr[coreml]&gt;=1.9.0"</span> <span class="n">supervision</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="n">datasets</span><span class="o">/</span><span class="n">coco2017</span>
+<span class="err">!</span><span class="n">cd</span> <span class="n">datasets</span><span class="o">/</span><span class="n">coco2017</span> <span class="o">&amp;&amp;</span> <span class="n">wget</span> <span class="o">-</span><span class="n">c</span> <span class="o">-</span><span class="n">q</span> <span class="o">--</span><span class="n">show</span><span class="o">-</span><span class="n">progress</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">images</span><span class="o">.</span><span class="n">cocodataset</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">zips</span><span class="o">/</span><span class="n">train2017</span><span class="o">.</span><span class="n">zip</span> <span class="o">&amp;&amp;</span> <span class="n">unzip</span> <span class="o">-</span><span class="n">o</span> <span class="o">-</span><span class="n">q</span> <span class="n">train2017</span><span class="o">.</span><span class="n">zip</span> <span class="o">&amp;&amp;</span> <span class="n">rm</span> <span class="o">-</span><span class="n">f</span> <span class="n">train2017</span><span class="o">.</span><span class="n">zip</span>
+<span class="err">!</span><span class="n">cd</span> <span class="n">datasets</span><span class="o">/</span><span class="n">coco2017</span> <span class="o">&amp;&amp;</span> <span class="n">wget</span> <span class="o">-</span><span class="n">c</span> <span class="o">-</span><span class="n">q</span> <span class="o">--</span><span class="n">show</span><span class="o">-</span><span class="n">progress</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">images</span><span class="o">.</span><span class="n">cocodataset</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">zips</span><span class="o">/</span><span class="n">val2017</span><span class="o">.</span><span class="n">zip</span> <span class="o">&amp;&amp;</span> <span class="n">unzip</span> <span class="o">-</span><span class="n">o</span> <span class="o">-</span><span class="n">q</span> <span class="n">val2017</span><span class="o">.</span><span class="n">zip</span> <span class="o">&amp;&amp;</span> <span class="n">rm</span> <span class="o">-</span><span class="n">f</span> <span class="n">val2017</span><span class="o">.</span><span class="n">zip</span>
+<span class="err">!</span><span class="n">cd</span> <span class="n">datasets</span><span class="o">/</span><span class="n">coco2017</span> <span class="o">&amp;&amp;</span> <span class="n">wget</span> <span class="o">-</span><span class="n">c</span> <span class="o">-</span><span class="n">q</span> <span class="o">--</span><span class="n">show</span><span class="o">-</span><span class="n">progress</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">images</span><span class="o">.</span><span class="n">cocodataset</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">annotations</span><span class="o">/</span><span class="n">annotations_trainval2017</span><span class="o">.</span><span class="n">zip</span> <span class="o">&amp;&amp;</span> <span class="n">unzip</span> <span class="o">-</span><span class="n">o</span> <span class="o">-</span><span class="n">q</span> <span class="n">annotations_trainval2017</span><span class="o">.</span><span class="n">zip</span> <span class="o">&amp;&amp;</span> <span class="n">rm</span> <span class="o">-</span><span class="n">f</span> <span class="n">annotations_trainval2017</span><span class="o">.</span><span class="n">zip</span>
+<span class="err">!</span><span class="n">df</span> <span class="o">-</span><span class="n">h</span> <span class="n">datasets</span><span class="o">/</span><span class="n">coco2017</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-1">!pip install -q "rfdetr[coreml]&gt;=1.9.0" supervision</div>
+<div class="clipboard-copy-txt" id="cell-1">!mkdir -p datasets/coco2017
+!cd datasets/coco2017 &amp;&amp; wget -c -q --show-progress http://images.cocodataset.org/zips/train2017.zip &amp;&amp; unzip -o -q train2017.zip &amp;&amp; rm -f train2017.zip
+!cd datasets/coco2017 &amp;&amp; wget -c -q --show-progress http://images.cocodataset.org/zips/val2017.zip &amp;&amp; unzip -o -q val2017.zip &amp;&amp; rm -f val2017.zip
+!cd datasets/coco2017 &amp;&amp; wget -c -q --show-progress http://images.cocodataset.org/annotations/annotations_trainval2017.zip &amp;&amp; unzip -o -q annotations_trainval2017.zip &amp;&amp; rm -f annotations_trainval2017.zip
+!df -h datasets/coco2017</div>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7f47977e">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=31376040">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2-setup">2. Setup<a class="anchor-link" href="#2-setup">¶</a></h2><p>CoreML export itself runs on CPU — no GPU is needed.</p>
+<p>Verify the extraction before spending GPU time on it. COCO2017 ships 118,287 training and 5,000 validation
+images; a short count catches a truncated download or an out-of-disk extraction here, at the cost of a few
+seconds, instead of several epochs later when the training loop first reaches a missing file.</p>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=cf61c100">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=2ceb9d53">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3198,41 +3944,60 @@ or any Linux runner.</p>
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 
-<span class="kn">from</span><span class="w"> </span><span class="nn">rfdetr</span><span class="w"> </span><span class="kn">import</span> <span class="n">RFDETRSmall</span>
+<span class="n">COCO_ROOT</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">"datasets/coco2017"</span><span class="p">)</span>
+<span class="n">EXPECTED_IMAGES</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"train2017"</span><span class="p">:</span> <span class="mi">118_287</span><span class="p">,</span> <span class="s2">"val2017"</span><span class="p">:</span> <span class="mi">5_000</span><span class="p">}</span>
 
-<span class="n">EXPORT_DIR</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">"export_coreml"</span><span class="p">)</span>
-<span class="n">EXPORT_DIR</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">split</span><span class="p">,</span> <span class="n">expected</span> <span class="ow">in</span> <span class="n">EXPECTED_IMAGES</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">found</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="p">(</span><span class="n">COCO_ROOT</span> <span class="o">/</span> <span class="n">split</span><span class="p">)</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">"*.jpg"</span><span class="p">))</span>
+    <span class="k">assert</span> <span class="n">found</span> <span class="o">==</span> <span class="n">expected</span><span class="p">,</span> <span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">COCO_ROOT</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">split</span><span class="si">}</span><span class="s2"> holds </span><span class="si">{</span><span class="n">found</span><span class="si">}</span><span class="s2"> images, expected </span><span class="si">{</span><span class="n">expected</span><span class="si">}</span><span class="s2">. "</span>
+        <span class="s2">"Re-run the download cell above; check the output of `df -h` for a full disk."</span>
+    <span class="p">)</span>
+    <span class="n">annotations</span> <span class="o">=</span> <span class="n">COCO_ROOT</span> <span class="o">/</span> <span class="s2">"annotations"</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">"instances_</span><span class="si">{</span><span class="n">split</span><span class="si">}</span><span class="s2">.json"</span>
+    <span class="k">assert</span> <span class="n">annotations</span><span class="o">.</span><span class="n">is_file</span><span class="p">(),</span> <span class="sa">f</span><span class="s2">"Missing </span><span class="si">{</span><span class="n">annotations</span><span class="si">}</span><span class="s2">. Re-run the download cell above."</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"COCO2017 is complete."</span><span class="p">)</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-2">from pathlib import Path
 
-from rfdetr import RFDETRSmall
+COCO_ROOT = Path("datasets/coco2017")
+EXPECTED_IMAGES = {"train2017": 118_287, "val2017": 5_000}
 
-EXPORT_DIR = Path("export_coreml")
-EXPORT_DIR.mkdir(exist_ok=True)</div>
+for split, expected in EXPECTED_IMAGES.items():
+    found = sum(1 for _ in (COCO_ROOT / split).glob("*.jpg"))
+    assert found == expected, (
+        f"{COCO_ROOT / split} holds {found} images, expected {expected}. "
+        "Re-run the download cell above; check the output of `df -h` for a full disk."
+    )
+    annotations = COCO_ROOT / "annotations" / f"instances_{split}.json"
+    assert annotations.is_file(), f"Missing {annotations}. Re-run the download cell above."
+
+print("COCO2017 is complete.")</div>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c205fee5">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b045cc9b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3-export-to-a-mlpackage">3. Export to a <code>.mlpackage</code><a class="anchor-link" href="#3-export-to-a-mlpackage">¶</a></h2><p>The COCO-pretrained <code>RFDETRSmall</code> is exported directly — pass <code>pretrain_weights="&lt;path/to/checkpoint.pth&gt;"</code>
-to export a fine-tuned model instead.</p>
-<p>The file is named after the model variant (<code>rfdetr-small.mlpackage</code>). <code>dynamic_batch=True</code> is not
-supported — fixed shapes are required for reliable ANE / GPU scheduling, so export one <code>.mlpackage</code> per
-batch size.</p>
-<p>Export leaves <code>coreml_precision</code> at its default <code>None</code>, which selects FP32 for tight CPU parity with eager PyTorch. Pass
-<code>coreml_precision="float16"</code> instead for a smaller, ANE-oriented bundle (expect larger numeric drift).</p>
+<h2 id="2-set-up-the-environment">2 - Set up the environment<a class="anchor-link" href="#2-set-up-the-environment">¶</a></h2><p>The throughput work described above has not shipped in a tagged release yet, so this cell installs from the
+<code>develop</code> branch. Once a release containing it is out, replace the git URL with a version pin.
+The install below also includes the CUDA/Transformer Engine dependency, needed only if you opt into the
+FP8 graph route (<code>USE_TE_GRAPHS = True</code> in section 4); this cookbook change and its runtime implementation
+must land together. Older revisions can warn and run FP8 eagerly instead. If you enable it, confirm the
+training log reports <code>Backend: Transformer Engine FP8</code>.</p>
+<p><strong>GPU required.</strong> Training needs a CUDA GPU — in Colab: <strong>Runtime → Change runtime type → GPU</strong>. The default recipe
+below is BF16/FP16 compilation; the optional Transformer Engine FP8 graph route is covered in section 4.</p>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=dafc5276">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=f6f7e52e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3250,34 +4015,52 @@ batch size.</p>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">RFDETRSmall</span><span class="p">()</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="o">%</span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">progress</span><span class="o">-</span><span class="n">bar</span> <span class="n">on</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">build</span><span class="o">-</span><span class="n">isolation</span> <span class="s2">"rfdetr[train,augment,visual,cuda] @ git+https://github.com/roboflow/rf-detr.git@develop"</span>
+<span class="o">%</span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">progress</span><span class="o">-</span><span class="n">bar</span> <span class="n">on</span> <span class="s2">"jedi&gt;=0.18"</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
 
-<span class="n">mlpackage_path</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">"coreml"</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">EXPORT_DIR</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"CoreML package: </span><span class="si">{</span><span class="n">mlpackage_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Using interpreter:"</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">)</span>
+<span class="err">!</span><span class="p">{</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">}</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">check</span> <span class="o">||</span> <span class="n">echo</span> <span class="s2">"warning: pip check reported conflicts (may be pre-existing/unrelated)"</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-3">model = RFDETRSmall()
+<div class="clipboard-copy-txt" id="cell-3">%pip install --progress-bar on --no-build-isolation "rfdetr[train,augment,visual,cuda] @ git+https://github.com/roboflow/rf-detr.git@develop"
+%pip install --progress-bar on "jedi&gt;=0.18"
+import sys
 
-mlpackage_path = model.export(format="coreml", output_dir=str(EXPORT_DIR))
-print(f"CoreML package: {mlpackage_path}")</div>
+print("Using interpreter:", sys.executable)
+!{sys.executable} -m pip check || echo "warning: pip check reported conflicts (may be pre-existing/unrelated)"</div>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=96ffef9c">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5d16c909">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4-sample-image">4. Sample image<a class="anchor-link" href="#4-sample-image">¶</a></h2><p>A single street scene with several COCO classes (dog, person, backpack, car) is enough to verify
-detections. The image is downloaded once and reused.</p>
+<h2 id="3-move-the-dataset-to-devshm">3 - Move the dataset to /dev/shm<a class="anchor-link" href="#3-move-the-dataset-to-devshm">¶</a></h2><p><code>/dev/shm</code> is Linux's tmpfs RAM disk — after the move, every DataLoader read is a memory access with no storage
+I/O at all. On the high-end hosts this notebook targets, RAM is plentiful (a GCP G4 shape carries 180+ GB, an
+A100 Colab runtime 80+ GB; <code>/dev/shm</code> is sized to half of RAM by default), so the ~19 GB dataset fits. It is a
+real win there because cloud persistent disks throttle throughput in proportion to provisioned size — a typical
+100-200 GB boot disk serves 118k random-access JPEG reads per epoch slowly. JPEG <em>decode</em> cost is unaffected by
+where the bytes come from; that CPU cost is what the high <code>num_workers</code> below parallelizes away.</p>
+<p>A move (not a copy) keeps a single instance of the dataset on the machine. Two consequences to know:</p>
+<ul>
+<li><strong>tmpfs does not survive a runtime restart</strong> — which is why this cell sits <em>after</em> the pip install (pip can
+restart the runtime). If the session restarts later anyway, the dataset is gone: re-run the download cell.</li>
+<li><strong>If <code>/dev/shm</code> is too small, <code>mv</code> fails part-way</strong> and leaves files split across both locations. Recover with
+<code>mv /dev/shm/coco2017/* datasets/coco2017/</code> and train from disk — or better, avoid it: on Colab pick a
+High-RAM runtime; <code>df -h /dev/shm</code> shows capacity before you commit.</li>
+</ul>
+<p>The <code>test -d</code> guard makes the cell safe to re-run: once the dataset already sits in <code>/dev/shm</code>, the <code>mv</code> is
+skipped instead of nesting a second copy inside it.</p>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=38ded628">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=8031ba02">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3295,52 +4078,42 @@ detections. The image is downloaded once and reused.</p>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">urllib.request</span>
-
-<span class="kn">from</span><span class="w"> </span><span class="nn">PIL</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span>
-
-<span class="n">IMAGE_URL</span> <span class="o">=</span> <span class="s2">"https://media.roboflow.com/notebooks/examples/dog.jpeg"</span>
-<span class="n">IMAGE_PATH</span> <span class="o">=</span> <span class="n">EXPORT_DIR</span> <span class="o">/</span> <span class="s2">"sample.jpg"</span>
-<span class="k">if</span> <span class="ow">not</span> <span class="n">IMAGE_PATH</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
-    <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">IMAGE_URL</span><span class="p">,</span> <span class="n">IMAGE_PATH</span><span class="p">)</span>
-
-<span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">IMAGE_PATH</span><span class="p">)</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s2">"RGB"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Sample image: </span><span class="si">{</span><span class="n">image</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">×</span><span class="si">{</span><span class="n">image</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span><span class="n">df</span> <span class="o">-</span><span class="n">h</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">shm</span>
+<span class="err">!</span><span class="n">test</span> <span class="o">-</span><span class="n">d</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">shm</span><span class="o">/</span><span class="n">coco2017</span> <span class="o">||</span> <span class="n">mv</span> <span class="n">datasets</span><span class="o">/</span><span class="n">coco2017</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">shm</span><span class="o">/</span><span class="n">coco2017</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-4">import urllib.request
-
-from PIL import Image
-
-IMAGE_URL = "https://media.roboflow.com/notebooks/examples/dog.jpeg"
-IMAGE_PATH = EXPORT_DIR / "sample.jpg"
-if not IMAGE_PATH.exists():
-    urllib.request.urlretrieve(IMAGE_URL, IMAGE_PATH)
-
-image = Image.open(IMAGE_PATH).convert("RGB")
-print(f"Sample image: {image.size[0]}×{image.size[1]}")</div>
+<div class="clipboard-copy-txt" id="cell-4">!df -h /dev/shm
+!test -d /dev/shm/coco2017 || mv datasets/coco2017 /dev/shm/coco2017</div>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=72f3b56b">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=309ded6e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5-run-the-mlpackage-with-coremltools">5. Run the <code>.mlpackage</code> with <code>coremltools</code><a class="anchor-link" href="#5-run-the-mlpackage-with-coremltools">¶</a></h2><p><code>coremltools</code> infers its own input/output names for the <code>.mlpackage</code> spec — they are <strong>not</strong> renamed to
-<code>input</code> / <code>dets</code> / <code>labels</code>. Read the input name and output order from <code>mlmodel.get_spec().description</code>
-instead of hardcoding them, then match outputs <strong>by position</strong> in the same order as the ONNX
-<code>output_names</code> contract (<code>dets, labels</code> for detection; <code>dets, labels, masks</code> for segmentation).</p>
-<p>Preprocessing is the same NCHW, ImageNet-normalized pipeline the ONNX and ExecuTorch exports expect —
-<code>infer_transforms</code> builds it directly.</p>
+<h2 id="4-load-the-model">4 - Load the model<a class="anchor-link" href="#4-load-the-model">¶</a></h2><p><code>pretrain_weights=None</code> skips the released COCO-pretrained Nano checkpoint, so the detection transformer and its
+heads start from random initialization — this notebook trains COCO2017 from scratch. The DINOv2 backbone still
+loads its self-supervised hub weights: RF-DETR requests them precisely when <code>pretrain_weights is None</code>, because
+a full checkpoint would otherwise carry the backbone with it.</p>
+<p>Instantiating with <code>pretrain_weights=None</code> raises a <code>PretrainWeightsCompatibilityWarning</code> saying the model is
+initialised from scratch. That is expected here; it is a warning, not an error.</p>
+<blockquote>
+<p><strong>Accuracy expectation.</strong> From scratch in 40 epochs lands far below the published Nano checkpoint. The released
+weights come from a much longer schedule with large-scale detection pretraining behind them. Fine-tune from the
+default checkpoint (drop the <code>pretrain_weights</code> argument) whenever accuracy, not the training loop itself, is
+the goal.</p>
+</blockquote>
+<p><code>num_classes</code> is left at its default of <code>90</code> — the standard COCO category-id space RF-DETR's <code>dataset_file="coco"</code>
+loader already uses, so it does not need to be passed explicitly.</p>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=05b46c36">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=cfdd3f0d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3358,76 +4131,294 @@ instead of hardcoding them, then match outputs <strong>by position</strong> in t
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">coremltools</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ct</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+
 <span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
 
-<span class="kn">from</span><span class="w"> </span><span class="nn">rfdetr.export.benchmark</span><span class="w"> </span><span class="kn">import</span> <span class="n">infer_transforms</span><span class="p">,</span> <span class="n">post_process</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rfdetr</span><span class="w"> </span><span class="kn">import</span> <span class="n">RFDETRNano</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rfdetr.visualize.training</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_loss_metrics</span><span class="p">,</span> <span class="n">plot_map_metrics</span>
 
-<span class="n">CONFIDENCE_THRESHOLD</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">():</span>
+    <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">"This notebook requires a CUDA GPU. In Colab: Runtime -&gt; Change runtime type -&gt; GPU."</span><span class="p">)</span>
 
-<span class="n">resolution</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">model_config</span><span class="o">.</span><span class="n">resolution</span>
-<span class="n">image_tensor</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">infer_transforms</span><span class="p">((</span><span class="n">resolution</span><span class="p">,</span> <span class="n">resolution</span><span class="p">))(</span><span class="n">image</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-<span class="n">pixel_values</span> <span class="o">=</span> <span class="n">image_tensor</span><span class="p">[</span><span class="kc">None</span><span class="p">]</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"PyTorch:"</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">__version__</span><span class="p">,</span> <span class="s2">"CUDA:"</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">cuda</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"GPU:"</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">get_device_name</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
 
-<span class="n">mlmodel</span> <span class="o">=</span> <span class="n">ct</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">MLModel</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">mlpackage_path</span><span class="p">))</span>
-<span class="n">spec</span> <span class="o">=</span> <span class="n">mlmodel</span><span class="o">.</span><span class="n">get_spec</span><span class="p">()</span>
-<span class="n">input_name</span> <span class="o">=</span> <span class="n">spec</span><span class="o">.</span><span class="n">description</span><span class="o">.</span><span class="n">input</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">name</span>
-<span class="n">output_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">o</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">spec</span><span class="o">.</span><span class="n">description</span><span class="o">.</span><span class="n">output</span><span class="p">]</span>
+<span class="c1"># Repeated from the verification cell so this section still runs on its own after a runtime restart.</span>
+<span class="n">COCO_ROOT</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">"datasets/coco2017"</span><span class="p">)</span>
+<span class="n">RAMDISK_ROOT</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">"/dev/shm/coco2017"</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">RAMDISK_ROOT</span><span class="o">.</span><span class="n">is_dir</span><span class="p">():</span>
+    <span class="n">COCO_ROOT</span> <span class="o">=</span> <span class="n">RAMDISK_ROOT</span>
+<span class="n">USE_TE_GRAPHS</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># Opt-in: True selects the Transformer Engine FP8 CUDA-graph showcase (RTX PRO 6000).</span>
+<span class="n">OUTPUT_DIR</span> <span class="o">=</span> <span class="s2">"output/det_coco2017_nano"</span>
+<span class="n">EPOCHS</span> <span class="o">=</span> <span class="mi">40</span>
+<span class="c1"># Capped: measured on a 48-core host, uncapped workers sat ~15% CPU-utilized while holding ~70% of RAM.</span>
+<span class="n">NUM_WORKERS</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">cpu_count</span><span class="p">()</span> <span class="ow">or</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+<span class="c1"># Batch 128 saturated the measured RTX PRO 6000 BF16 baseline; FP8 graph memory/throughput needs validation.</span>
+<span class="c1"># Other GPUs: use the configuration table below.</span>
+<span class="n">BATCH_SIZE</span> <span class="o">=</span> <span class="mi">128</span>  <span class="c1"># User-tune this for the available GPU; Transformer Engine evidence below uses synthetic batch 4 only.</span>
+<span class="c1"># FP8 uses Transformer Engine graphs. The compilation alternative enables Inductor graphs only at small batches.</span>
+<span class="n">CUDA_GRAPHS</span> <span class="o">=</span> <span class="n">USE_TE_GRAPHS</span> <span class="ow">or</span> <span class="n">BATCH_SIZE</span> <span class="o">&lt;=</span> <span class="mi">16</span>
 
-<span class="n">prediction</span> <span class="o">=</span> <span class="n">mlmodel</span><span class="o">.</span><span class="n">predict</span><span class="p">({</span><span class="n">input_name</span><span class="p">:</span> <span class="n">pixel_values</span><span class="p">})</span>
-<span class="n">dets</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">prediction</span><span class="p">[</span><span class="n">name</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">))</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">output_names</span><span class="p">[:</span><span class="mi">2</span><span class="p">])</span>
-
-<span class="n">target_sizes</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([[</span><span class="n">image</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="n">image</span><span class="o">.</span><span class="n">width</span><span class="p">]])</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">post_process</span><span class="p">({</span><span class="s2">"dets"</span><span class="p">:</span> <span class="n">dets</span><span class="p">,</span> <span class="s2">"labels"</span><span class="p">:</span> <span class="n">labels</span><span class="p">},</span> <span class="n">target_sizes</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Top score: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">'scores'</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">RFDETRNano</span><span class="p">(</span>
+    <span class="nb">compile</span><span class="o">=</span><span class="ow">not</span> <span class="n">USE_TE_GRAPHS</span><span class="p">,</span>
+    <span class="n">cuda_graphs</span><span class="o">=</span><span class="n">CUDA_GRAPHS</span><span class="p">,</span>
+    <span class="n">pretrain_weights</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span>  <span class="c1"># type: ignore[no-untyped-call]</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-5">import coremltools as ct
-import numpy as np
+<div class="clipboard-copy-txt" id="cell-5">import os
+from pathlib import Path
+
 import torch
 
-from rfdetr.export.benchmark import infer_transforms, post_process
+from rfdetr import RFDETRNano
+from rfdetr.visualize.training import plot_loss_metrics, plot_map_metrics
 
-CONFIDENCE_THRESHOLD = 0.5
+if not torch.cuda.is_available():
+    raise RuntimeError("This notebook requires a CUDA GPU. In Colab: Runtime -&gt; Change runtime type -&gt; GPU.")
 
-resolution = model.model_config.resolution
-image_tensor, _ = infer_transforms((resolution, resolution))(image, None)
-pixel_values = image_tensor[None].numpy()
+print("PyTorch:", torch.__version__, "CUDA:", torch.version.cuda)
+print("GPU:", torch.cuda.get_device_name(0))
 
-mlmodel = ct.models.MLModel(str(mlpackage_path))
-spec = mlmodel.get_spec()
-input_name = spec.description.input[0].name
-output_names = [o.name for o in spec.description.output]
+# Repeated from the verification cell so this section still runs on its own after a runtime restart.
+COCO_ROOT = Path("datasets/coco2017")
+RAMDISK_ROOT = Path("/dev/shm/coco2017")
+if RAMDISK_ROOT.is_dir():
+    COCO_ROOT = RAMDISK_ROOT
+USE_TE_GRAPHS = False  # Opt-in: True selects the Transformer Engine FP8 CUDA-graph showcase (RTX PRO 6000).
+OUTPUT_DIR = "output/det_coco2017_nano"
+EPOCHS = 40
+# Capped: measured on a 48-core host, uncapped workers sat ~15% CPU-utilized while holding ~70% of RAM.
+NUM_WORKERS = min(os.cpu_count() or 2, 16)
+# Batch 128 saturated the measured RTX PRO 6000 BF16 baseline; FP8 graph memory/throughput needs validation.
+# Other GPUs: use the configuration table below.
+BATCH_SIZE = 128  # User-tune this for the available GPU; Transformer Engine evidence below uses synthetic batch 4 only.
+# FP8 uses Transformer Engine graphs. The compilation alternative enables Inductor graphs only at small batches.
+CUDA_GRAPHS = USE_TE_GRAPHS or BATCH_SIZE &lt;= 16
 
-prediction = mlmodel.predict({input_name: pixel_values})
-dets, labels = (torch.from_numpy(np.asarray(prediction[name], dtype=np.float32)) for name in output_names[:2])
-
-target_sizes = torch.tensor([[image.height, image.width]])
-result = post_process({"dets": dets, "labels": labels}, target_sizes)[0]
-print(f"Top score: {result['scores'][0]:.3f}")</div>
+model = RFDETRNano(
+    compile=not USE_TE_GRAPHS,
+    cuda_graphs=CUDA_GRAPHS,
+    pretrain_weights=None,
+)  # type: ignore[no-untyped-call]</div>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e8265e69">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2de07e37">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6-visualize-with-supervision">6. Visualize with supervision<a class="anchor-link" href="#6-visualize-with-supervision">¶</a></h2><p><code>post_process</code> returns boxes in absolute <code>xyxy</code> pixel coordinates along with scores and COCO class ids.
-Filter by confidence, wrap the result in a <code>supervision.Detections</code>, and annotate the original image.</p>
-<p>Annotate the <strong>PIL image</strong> rather than <code>np.array(image)</code>. supervision's annotators accept either, but a
-numpy scene is assumed to be OpenCV-style BGR — handing them an RGB array swaps the red and blue channels
-of the annotations, and <code>sv.plot_image</code> then swaps the photo itself. Passing PIL lets supervision convert
-in both directions and keeps the colours right.</p>
+<h3 id="gpu-configuration-recommendations">GPU configuration recommendations<a class="anchor-link" href="#gpu-configuration-recommendations">¶</a></h3><p>These settings target throughput for Nano at fixed 384 px, not optimal accuracy. Set <code>USE_TE_GRAPHS</code> and
+<code>BATCH_SIZE</code> in the preceding cell before constructing the model; the precision, compile, and graph flags
+follow automatically. <strong>Starting point</strong> means not benchmarked on that GPU; it is not a fastest-path claim.</p>
+<table>
+<thead>
+<tr>
+<th>GPU</th>
+<th><code>BATCH_SIZE</code></th>
+<th><code>USE_TE_GRAPHS</code></th>
+<th>Precision</th>
+<th>Compile / graphs</th>
+<th>Evidence and recommendation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RTX PRO 6000 Blackwell, 96 GB</td>
+<td>128</td>
+<td><code>False</code></td>
+<td>BF16</td>
+<td>on / off</td>
+<td>Default; measured large-batch COCO baseline.</td>
+</tr>
+<tr>
+<td>RTX PRO 6000 Blackwell, opt-in FP8</td>
+<td>128</td>
+<td><code>True</code></td>
+<td>FP8</td>
+<td>off / on</td>
+<td>Opt-in showcase; graph gain measured only at synthetic batch 4. Validate full-COCO throughput and accuracy before adopting.</td>
+</tr>
+<tr>
+<td>L4, 24 GB</td>
+<td>32</td>
+<td><code>False</code></td>
+<td>BF16</td>
+<td>on / off</td>
+<td>Measured throughput saturates around batch 32; ordinary FP8 was slower. FP8 graphs at this batch are unmeasured.</td>
+</tr>
+<tr>
+<td>H100, 80 GB</td>
+<td>128</td>
+<td><code>False</code></td>
+<td>BF16</td>
+<td>on / off</td>
+<td>Starting point; FP8 is supported, but this workload has no matched FP8-graph benchmark here.</td>
+</tr>
+<tr>
+<td>A100, 40/80 GB</td>
+<td>64</td>
+<td><code>False</code></td>
+<td>BF16</td>
+<td>on / off</td>
+<td>Starting point; Ampere does not support this FP8 route.</td>
+</tr>
+<tr>
+<td>RTX 6000 Ada, 48 GB</td>
+<td>64</td>
+<td><code>False</code></td>
+<td>BF16</td>
+<td>on / off</td>
+<td>Starting point; FP8 capable, but not the Blackwell GPU used in the uploaded graph experiment.</td>
+</tr>
+<tr>
+<td>RTX A6000 / A10</td>
+<td>32</td>
+<td><code>False</code></td>
+<td>BF16</td>
+<td>on / off</td>
+<td>Conservative starting point; Ampere, no FP8 route.</td>
+</tr>
+<tr>
+<td>T4 / Quadro RTX 6000</td>
+<td>32</td>
+<td><code>False</code></td>
+<td>FP16</td>
+<td>on / off</td>
+<td>Starting point; older Turing GPUs, no BF16/FP8 route. Reduce batch if memory is insufficient.</td>
+</tr>
+</tbody>
+</table>
+<p>GPU identity comes from <a href="https://developer.nvidia.com/cuda/gpus">NVIDIA's architecture table</a>;
+<a href="https://docs.nvidia.com/deeplearning/transformer-engine/user-guide/">Transformer Engine supports FP8 on Ada, Hopper and Blackwell</a>.
+All rows retain 40 epochs, <code>grad_accum_steps=1</code>, <code>multi_scale=False</code>, <code>square_resize_div_64=True</code>, and
+<code>num_workers=min(os.cpu_count() or 2, 16)</code>. On CPU-constrained hosts, worker count and JPEG decoding can
+dominate GPU differences. Measure complete epochs after startup, memory, and validation mAP; choose the
+fastest configuration meeting the same accuracy target. Lowering batch size changes effective batch size.</p>
+<h2 id="5-train">5 - Train<a class="anchor-link" href="#5-train">¶</a></h2><p><code>model.train()</code> builds the <code>TrainConfig</code> and hands the rest to PyTorch Lightning: forward pass, bipartite
+matching loss, weight updates, learning-rate scheduling, and periodic COCO mAP validation.</p>
+<p><code>CSVLogger</code> appends one row of metrics per epoch to <code>output_dir/metrics.csv</code>, plotted below. The progress bar
+reports elapsed time per epoch. Compilation adds startup overhead: time subsequent epochs separately.
+A failed CUDA graph capture (<code>CUDA_GRAPHS=True</code> or <code>USE_TE_GRAPHS=True</code>) requires a runtime restart before
+retrying. The Transformer Engine graph path, when enabled, captures one fixed batch/resolution signature;
+changing that shape raises.</p>
+<p>To <strong>resume an interrupted run</strong>, add <code>resume=f"{OUTPUT_DIR}/last.ckpt"</code> to the call below and re-run this cell.
+<code>last.ckpt</code> is rewritten every epoch (the archive <code>checkpoint_&lt;epoch&gt;.ckpt</code> files follow <code>checkpoint_interval</code>,
+10 by default), so a disconnect costs at most the epoch in flight.</p>
+<h3 id="training-settings">Training settings<a class="anchor-link" href="#training-settings">¶</a></h3><ul>
+<li><strong><code>batch_size=128</code></strong> — throughput stops improving once the GPU is saturated: on the RTX PRO 6000, 128 and 288
+give the same images per second; on the L4, 32 and 64 do. Pick the batch that leaves memory headroom rather
+than the largest that fits. Two things to know when changing it: the default <code>lr=1e-4</code> was tuned around an
+effective batch of 16, and this notebook leans on cosine-plus-warmup rather than rescaling <code>lr</code> for the 8x
+larger batch — if you tune, the linear-scaling heuristic is the place to start. On a smaller GPU, reduce the
+integer batch size and adjust <code>grad_accum_steps</code> to preserve the desired effective batch; in bf16,
+<code>batch_size="auto"</code> also works and probes for the largest micro-batch that fits.</li>
+<li><strong><code>num_workers</code></strong> — the default is <code>2</code>, which is fine for the few-thousand-image datasets in the other
+cookbooks and far too low for COCO2017: 118k JPEGs have to be decoded and resized every epoch, and two worker
+processes cannot keep a modern GPU fed. But more is not simply better — on a 48-core host with this exact
+configuration, 48 workers sat at ~15% CPU while eating ~70% of RAM: once the GPU is the bottleneck, extra
+workers add nothing but memory (each worker process carries its own copy of the 118k-image annotation index,
+plus <code>prefetch_factor</code> batches of decoded tensors queued per worker). Capping at 16 feeds the GPU with
+headroom; if the GPU ever waits on data, raise the cap until epoch time stops improving.</li>
+<li><strong><code>seed=0</code></strong> — seeds Python, NumPy, and torch through Lightning's <code>seed_everything(..., workers=True)</code>, which
+also gives each dataloader worker a distinct, reproducible stream. Note that RF-DETR's own
+<code>seed_all</code> helper is <em>not</em> used here: besides seeding, it sets <code>cudnn.deterministic=True</code> and
+<code>torch.use_deterministic_algorithms(True)</code>, forcing slow deterministic kernels for exactly the scatter and
+grid-sample backward passes deformable attention leans on. Reproducible seeding is worth having; deterministic
+kernels are not, in a notebook about throughput.</li>
+<li><strong><code>lr_scheduler="cosine"</code></strong> and <strong><code>warmup_epochs=1</code></strong> — the default schedule is <code>"step"</code>; its managed preset falls back to <code>lr_drop=100</code> when omitted,
+i.e. a 10x drop after epoch 100. In a 40-epoch run that drop never happens and the learning rate stays flat
+from first step to last, so the mAP curve plateaus noisily with no final refinement. Cosine annealing is sized
+from the run's own total step count, so it decays correctly no matter how many epochs or how large a batch the
+GPU ends up with, and the one-epoch linear warmup keeps the first steps stable.</li>
+</ul>
+<h3 id="compilation">Compilation<a class="anchor-link" href="#compilation">¶</a></h3><p><code>RFDETRNano(compile=True)</code> is worth 21 % per epoch on the RTX PRO 6000 and 27 % on an L4 at the same batch,
+precision and resolution. Epoch 0 pays the warm-up. Inductor's coalesce tiling analysis is disabled by the
+library at the compile call (torch 2.11 asserts on it and would silently fall back to eager for the whole
+forward), so no user-side flag is needed.</p>
+<p><code>multi_scale=False</code> trains Nano at a fixed 384 px rather than the multi-scale ladder's 544 px top scale, which
+is the resolution every number above was measured at; it replaces the previous recipe's 544 px workload and may
+change accuracy.</p>
+<h3 id="cuda-graphs-on-top-of-compilation">CUDA graphs on top of compilation<a class="anchor-link" href="#cuda-graphs-on-top-of-compilation">¶</a></h3><p><code>RFDETRNano(compile=True, cuda_graphs=True)</code> replays the compiled forward and backward through Inductor's CUDA
+graph trees, removing the kernel-launch gaps that compilation leaves in place. Whether that is worth anything
+depends on the batch, measured on the RTX PRO 6000 with Nano at 384 px, BF16, synthetic batches:</p>
+<table>
+<thead>
+<tr>
+<th>batch [img]</th>
+<th>eager [img/s]</th>
+<th><code>compile</code> [img/s]</th>
+<th><code>compile</code> + <code>cuda_graphs</code> [img/s]</th>
+<th>GPU busy <code>compile</code> → both [-]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>78.7</td>
+<td>96.8</td>
+<td>116.0 (1.20x over compile)</td>
+<td>0.32 → 0.42</td>
+</tr>
+<tr>
+<td>64</td>
+<td>246.8</td>
+<td>322.8</td>
+<td>325.7 (+0.9 %, noise)</td>
+<td>0.82 → 0.83</td>
+</tr>
+</tbody>
+</table>
+<p>With <code>USE_TE_GRAPHS=False</code> (the default) and batch 128, the compiled kernels already run back to back, so
+this recipe leaves Inductor graphs off. It enables them at batches up to 16, where launch gaps can matter.
+This rule does not affect the optional Transformer Engine graphs, controlled separately by
+<code>USE_TE_GRAPHS</code>. The compiled graph route is validated for single-GPU detection without
+<code>grad_accum_steps &gt; 1</code>; other layouts fall back to plain compilation with a warning. Graph recording adds a few
+seconds per new input shape on top of compile warm-up. See
+<a href="../learn/train/advanced.md#combining-cuda-graphs-with-compilation">Combining CUDA graphs with compilation</a>.</p>
+<h3 id="what-is-left">What is left<a class="anchor-link" href="#what-is-left">¶</a></h3><p>With compilation on, the GPU is busy for about 83 % of each training step at batch 64 and the remaining share
+is spent outside the model: bipartite matching and the loss on the host, and the data loader. No constructor or
+<code>train()</code> flag in this notebook moves that share — larger batches, more workers, standard FP8, and Inductor CUDA
+graphs were each measured and none reach it. The optional Transformer Engine graph path has only synthetic
+fixed-shape evidence, not an end-to-end COCO measurement. The one wall-clock knob that remains is validation:
+<code>eval_interval=N</code> runs the 5,000-
+image COCO evaluation every N epochs instead of every epoch, at the cost of a coarser mAP curve in section 6; its
+saving was not measured for this recipe.</p>
+<h3 id="optional-transformer-engine-fp8-graphs">Optional: Transformer Engine FP8 graphs<a class="anchor-link" href="#optional-transformer-engine-fp8-graphs">¶</a></h3><p>Requires the <code>cuda</code> extra (Transformer Engine, Hopper/Ada/Blackwell, Linux x86-64), an integer <code>batch_size</code>, and
+<code>amp_dtype="fp8"</code>. Measured on Nano, FP8 changes throughput by +3 % per epoch on Blackwell and −11 % on an L4,
+and raises the memory ceiling to 320 from 288 (RTX PRO 6000) and to 72 from 64 (L4). Lightning warns at startup
+that 14 linear layers are not FP8-shaped; those are the per-layer classification heads and they run in bf16.
+Those ordinary-FP8 measurements exclude Transformer Engine graphs; they do not predict this combined route.
+The setup cell above installs <code>transformer-engine[pytorch]</code> through RF-DETR's <code>cuda</code> extra
+and builds its PyTorch extension: CUDA toolkit headers, cuDNN, and a compiler have to be present, Blackwell needs
+CUDA 12.8 or later, and the kernel has to be restarted afterwards. See the <a href="../learn/train/advanced.md#install-the-cuda-extra">advanced FP8 setup guide</a>.</p>
+<p>The install cell above uses RF-DETR's existing <code>cuda</code> extra for Transformer Engine and runs <code>pip check</code> after
+installing Jedi. The Transformer Engine-aware graph path was tested with Transformer Engine 2.19.0; no separate
+CUDA-core package or version override is required. Transformer Engine must match the CUDA toolkit, driver,
+cuDNN, and PyTorch ABI; package resolution alone is not compatibility evidence. Restart the kernel after
+installing compiled dependencies, set <code>USE_TE_GRAPHS = True</code>, and run the full 40-epoch
+training cell with <code>amp_dtype="fp8"</code> below.</p>
+<p>This path is limited to single-GPU detection with <code>compile=False</code>, <code>grad_accum_steps=1</code>, <code>multi_scale=False</code>
+and <code>square_resize_div_64=True</code>; aspect-preserving batches with the last
+setting disabled stay eager. It captures one fixed batch/resolution signature; unsupported layouts
+warn and stay eager. A synthetic Nano 384 px / batch-4 run on an RTX PRO 6000 Blackwell used 20 warm-up and
+50 measured steps: 78.075 ms eager versus 40.066 ms with Transformer Engine-aware graphs (about 1.95x
+throughput), with one capture serving 70 calls. This is not COCO parity, accuracy, or large-batch evidence;
+repeat numerical-parity and performance checks on the target GPU before adopting it as a baseline.</p>
+<p>Separately, <code>augmentation_backend="gpu"</code> moves augmentation off the CPU workers — a
+rescue for CPU-starved runtimes (a 2-core Colab), and exactly backwards on this notebook's target: with the CPU
+mostly idle and the GPU saturated, it would add work to the bottleneck and take it away from idle cores.</p>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=35702116">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=acc62c03">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3445,80 +4436,130 @@ in both directions and keeps the colours right.</p>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">supervision</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sv</span>
-
-<span class="kn">from</span><span class="w"> </span><span class="nn">rfdetr.assets.coco_classes</span><span class="w"> </span><span class="kn">import</span> <span class="n">COCO_CLASSES</span>
-
-<span class="n">keep</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s2">"scores"</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">CONFIDENCE_THRESHOLD</span>
-<span class="n">detections</span> <span class="o">=</span> <span class="n">sv</span><span class="o">.</span><span class="n">Detections</span><span class="p">(</span>
-    <span class="n">xyxy</span><span class="o">=</span><span class="n">result</span><span class="p">[</span><span class="s2">"boxes"</span><span class="p">][</span><span class="n">keep</span><span class="p">]</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span>
-    <span class="n">confidence</span><span class="o">=</span><span class="n">result</span><span class="p">[</span><span class="s2">"scores"</span><span class="p">][</span><span class="n">keep</span><span class="p">]</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span>
-    <span class="n">class_id</span><span class="o">=</span><span class="n">result</span><span class="p">[</span><span class="s2">"labels"</span><span class="p">][</span><span class="n">keep</span><span class="p">]</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">(</span>
+    <span class="n">dataset_file</span><span class="o">=</span><span class="s2">"coco"</span><span class="p">,</span>
+    <span class="n">dataset_dir</span><span class="o">=</span><span class="n">COCO_ROOT</span><span class="p">,</span>
+    <span class="n">output_dir</span><span class="o">=</span><span class="n">OUTPUT_DIR</span><span class="p">,</span>
+    <span class="n">epochs</span><span class="o">=</span><span class="n">EPOCHS</span><span class="p">,</span>
+    <span class="n">batch_size</span><span class="o">=</span><span class="n">BATCH_SIZE</span><span class="p">,</span>
+    <span class="n">num_workers</span><span class="o">=</span><span class="n">NUM_WORKERS</span><span class="p">,</span>
+    <span class="n">seed</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">lr_scheduler</span><span class="o">=</span><span class="s2">"cosine"</span><span class="p">,</span>
+    <span class="n">warmup_epochs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">tensorboard</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">progress_bar</span><span class="o">=</span><span class="s2">"tqdm"</span><span class="p">,</span>
+    <span class="n">amp_dtype</span><span class="o">=</span><span class="s2">"fp8"</span> <span class="k">if</span> <span class="n">USE_TE_GRAPHS</span> <span class="k">else</span> <span class="s2">"auto"</span><span class="p">,</span>
+    <span class="n">grad_accum_steps</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">multi_scale</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">square_resize_div_64</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Kept </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">detections</span><span class="p">)</span><span class="si">}</span><span class="s2"> detections above </span><span class="si">{</span><span class="n">CONFIDENCE_THRESHOLD</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-
-<span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="n">COCO_CLASSES</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">c</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">c</span><span class="p">))</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">detections</span><span class="o">.</span><span class="n">class_id</span><span class="p">]</span>
-<span class="n">annotation_labels</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">conf</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">"</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">conf</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">detections</span><span class="o">.</span><span class="n">confidence</span><span class="p">)]</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Detections: </span><span class="si">{</span><span class="n">annotation_labels</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-
-<span class="n">annotated</span> <span class="o">=</span> <span class="n">sv</span><span class="o">.</span><span class="n">BoxAnnotator</span><span class="p">(</span><span class="n">thickness</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">scene</span><span class="o">=</span><span class="n">image</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">detections</span><span class="o">=</span><span class="n">detections</span><span class="p">)</span>
-<span class="n">annotated</span> <span class="o">=</span> <span class="n">sv</span><span class="o">.</span><span class="n">LabelAnnotator</span><span class="p">(</span><span class="n">text_scale</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">text_thickness</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">text_padding</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span>
-    <span class="n">scene</span><span class="o">=</span><span class="n">annotated</span><span class="p">,</span> <span class="n">detections</span><span class="o">=</span><span class="n">detections</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">annotation_labels</span>
-<span class="p">)</span>
-
-<span class="n">OUTPUT_PATH</span> <span class="o">=</span> <span class="n">EXPORT_DIR</span> <span class="o">/</span> <span class="s2">"annotated_coreml.jpg"</span>
-<span class="n">annotated</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">OUTPUT_PATH</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Saved annotated image: </span><span class="si">{</span><span class="n">OUTPUT_PATH</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-<span class="n">sv</span><span class="o">.</span><span class="n">plot_image</span><span class="p">(</span><span class="n">annotated</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-6">import supervision as sv
-
-from rfdetr.assets.coco_classes import COCO_CLASSES
-
-keep = result["scores"] &gt; CONFIDENCE_THRESHOLD
-detections = sv.Detections(
-    xyxy=result["boxes"][keep].numpy(),
-    confidence=result["scores"][keep].numpy(),
-    class_id=result["labels"][keep].numpy().astype(int),
-)
-print(f"Kept {len(detections)} detections above {CONFIDENCE_THRESHOLD}")
-
-names = [COCO_CLASSES.get(int(c), str(c)) for c in detections.class_id]
-annotation_labels = [f"{name} {conf:.2f}" for name, conf in zip(names, detections.confidence)]
-print(f"Detections: {annotation_labels}")
-
-annotated = sv.BoxAnnotator(thickness=3).annotate(scene=image.copy(), detections=detections)
-annotated = sv.LabelAnnotator(text_scale=0.6, text_thickness=1, text_padding=4).annotate(
-    scene=annotated, detections=detections, labels=annotation_labels
-)
-
-OUTPUT_PATH = EXPORT_DIR / "annotated_coreml.jpg"
-annotated.save(OUTPUT_PATH)
-print(f"Saved annotated image: {OUTPUT_PATH}")
-sv.plot_image(annotated)</div>
+<div class="clipboard-copy-txt" id="cell-6">model.train(
+    dataset_file="coco",
+    dataset_dir=COCO_ROOT,
+    output_dir=OUTPUT_DIR,
+    epochs=EPOCHS,
+    batch_size=BATCH_SIZE,
+    num_workers=NUM_WORKERS,
+    seed=0,
+    lr_scheduler="cosine",
+    warmup_epochs=1,
+    tensorboard=False,
+    progress_bar="tqdm",
+    amp_dtype="fp8" if USE_TE_GRAPHS else "auto",
+    grad_accum_steps=1,
+    multi_scale=False,
+    square_resize_div_64=True,
+)</div>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bb085a15">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=762275b6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="next-steps">Next steps<a class="anchor-link" href="#next-steps">¶</a></h2><ul>
-<li><strong>Deploy in Xcode</strong> — drag <code>rfdetr-small.mlpackage</code> into your Xcode project and load it with the
-<code>Vision</code> or <code>CoreML</code> framework for on-device iOS / macOS inference.</li>
-<li><strong>Fine-tuned weights</strong> — pass <code>pretrain_weights="&lt;path/to/checkpoint.pth&gt;"</code> when constructing the model.</li>
-<li><strong>Smaller bundle</strong> — pass <code>coreml_precision="float16"</code> to <code>export()</code> for an ANE-oriented build (expect
-larger numeric drift from the fp32 PyTorch baseline).</li>
-<li><strong>On-device via ExecuTorch instead</strong> — see the <a href="../export-executorch/">ExecuTorch cookbook</a> for the
-<code>format="executorch", backend="coreml"</code> path, which produces a <code>.pte</code> for the ExecuTorch runtime rather
-than a native <code>.mlpackage</code>.</li>
-<li>See the <a href="https://rfdetr.roboflow.com/learn/export/">Export documentation</a> for all formats and options.</li>
-</ul>
+<h2 id="6-plot-csvlogger-metrics">6 - Plot CSVLogger metrics<a class="anchor-link" href="#6-plot-csvlogger-metrics">¶</a></h2><p>RF-DETR's <code>CSVLogger</code> writes <code>val/mAP_50_95</code>, <code>val/mAP_50</code>, and <code>val/mAP_75</code> to <code>metrics.csv</code> (plus the
+<code>train/loss</code> family and <code>ema_</code> variants), and the plotting helpers below discover those columns automatically.
+<code>val/mAP_50_95</code> is the primary metric — standard COCO bounding-box mAP averaged across IoU thresholds
+0.50-0.95. <code>val/mAP_50</code> rises fastest and is the clearest early signal of whether training is progressing at
+all; <code>val/mAP_75</code> reflects localization precision, not just whether objects are found.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=eca65e11">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-7">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">METRICS_CSV</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">OUTPUT_DIR</span><span class="si">}</span><span class="s2">/metrics.csv"</span>
+
+<span class="n">loss_figure</span> <span class="o">=</span> <span class="n">plot_loss_metrics</span><span class="p">(</span><span class="n">METRICS_CSV</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">loss_figure</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">loss_figure</span><span class="p">)</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-7">from IPython.display import display
+from matplotlib import pyplot as plt
+
+METRICS_CSV = f"{OUTPUT_DIR}/metrics.csv"
+
+loss_figure = plot_loss_metrics(METRICS_CSV)
+display(loss_figure)
+plt.close(loss_figure)</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=9d742130">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-8">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">map_figure</span> <span class="o">=</span> <span class="n">plot_map_metrics</span><span class="p">(</span><span class="n">METRICS_CSV</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">map_figure</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">map_figure</span><span class="p">)</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-8">map_figure = plot_map_metrics(METRICS_CSV)
+display(map_figure)
+plt.close(map_figure)</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -3550,7 +4591,7 @@ than a native <code>.mlpackage</code>.</li>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="July 28, 2026 18:51:45 UTC">2026-07-28 18:51:45</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="September 22, 2026 10:30:49 UTC">2026-09-22 10:30:49</span>
   </span>
 
     
@@ -3659,6 +4700,8 @@ than a native <code>.mlpackage</code>.</li>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/version-banner.js"></script>
       
     
   </body>
